@@ -1,1 +1,97 @@
+import math
+import rospy
+import tf
+from geometry_msgs.msg import Twist, Point, Quaternion
+from nav_msgs.msg import Odometry
+from std_msgs.msg import Int32
+from tf.transformations import quaternion_from_euler, euler_from_quaternion
+
+# Global variables
+wheel_diameter = 0.1  # Replace with your actual wheel diameter
+wheel_base = 0.2  # Replace with your actual wheel base
+gear_ratio = 1.0  # Replace with your actual gear ratio
+theta = 0.0
+x_position = 0.0
+y_position = 0.0
+l_distance = 0.0
+r_distance = 0.0
+l_vel = 0.0
+r_vel = 0.0
+
+# ROS initialization
+rospy.init_node('robot_controller')
+odom_pub = rospy.Publisher("odom", Odometry, queue_size=50)
+odom_broadcaster = tf.TransformBroadcaster()
+
+# Wheel speed callback
+def wheel_speed_cb(data):
+    global r_vel, l_vel
+    left_wheel_vel = data.linear.x - ((data.angular.z * wheel_base) / 2.0)
+    right_wheel_vel = data.linear.x + ((data.angular.z * wheel_base) / 2.0)
+
+    c = math.pi * wheel_diameter
+    r_vel = (right_wheel_vel / c) * gear_ratio
+    l_vel = (left_wheel_vel / c) * gear_ratio
+
+# Left wheel tick callback
+def l_tick_cb(msg):
+    global wheel_diameter, l_distance, l_vel
+    ticks = msg.data
+    l_distance = ((ticks / 32.0) / 56.0) * (math.pi * wheel_diameter)
+    l_vel = l_distance * 20.0
+    update_odom()
+
+# Update odometry
+def update_odom():
+    global theta, l_distance, r_distance, wheel_base, x_position, y_position, odom_pub, odom_broadcaster
+
+    d_center = (l_distance + r_distance) / 2.0
+    phi = (r_distance - l_distance) / wheel_base
+    theta += phi
+
+    if theta > 2.0 * math.pi:
+        theta -= 2.0 * math.pi
+
+    if theta < 0.0:
+        theta += 2.0 * math.pi
+
+    x_position += d_center * math.cos(theta)
+    y_position += d_center * math.sin(theta)
+
+    vec_v = (r_vel + l_vel) / 2.0
+    ang_vel = (r_vel - l_vel) / wheel_base
+
+    vx = vec_v * math.cos(ang_vel)
+    vy = vec_v * math.sin(ang_vel)
+
+    current_time = rospy.get_rostime()
+    odom_quat = quaternion_from_euler(0, 0, theta)
+
+    odom_broadcaster.sendTransform((x_position, y_position, 0.), odom_quat, current_time, "base_footprint", "odom")
+
+    odom = Odometry()
+    odom.header.stamp = current_time
+    odom.header.frame_id = "odom"
+    odom.pose.pose = Pose(Point(x_position, y_position, 0.), Quaternion(*odom_quat))
+    odom.child_frame_id = "base_link"
+    odom.twist.twist = Twist(Vector3(vx, vy, 0), Vector3(0, 0, ang_vel))
+
+    for i in range(0, 36):
+        odom.pose.covariance[i] = 0.0
+
+    odom.pose.covariance[0] = 0.01
+    odom.pose.covariance[7] = 0.01
+    odom.pose.covariance[14] = 0.01
+    odom.pose.covariance[21] = 0.1
+    odom.pose.covariance[28] = 0.1
+    odom.pose.covariance[35] = 0.1
+
+    odom_pub.publish(odom)
+
+# ROS subscribers
+rospy.Subscriber("cmd_vel", Twist, wheel_speed_cb)
+rospy.Subscriber("left_wheel_ticks", Int32, l_tick_cb)
+
+# ROS spin
+rospy.spin()
 
