@@ -1,5 +1,5 @@
 # Video Presentation
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ee-Qj5FtBRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Default Thumbnail](http://img.youtube.com/vi/-FBNOv6xgVc/0.jpg)](http://www.youtube.com/watch?v=-FBNOv6xgVc)
 
 #### README - Webots - Obstacle avoiding robot simulation
 ### 12204505 Guliza Aitkulova
