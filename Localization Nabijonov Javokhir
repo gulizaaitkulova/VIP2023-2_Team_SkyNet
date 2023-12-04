@@ -1,0 +1,48 @@
+# Import necessary ROS packages
+import rospy
+from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
+from nav_msgs.msg import Odometry
+from std_msgs.msg import PoseWithCovarianceStamped
+
+# Initialize ROS node
+rospy.init_node('turtlebot_localization')
+
+# Set up AMCL parameters
+amcl_params = {
+    'odom_frame_id': 'odom',
+    'base_frame_id': 'base_footprint',
+    'global_frame_id': 'map',
+    'min_particles': 100,
+    'max_particles': 5000,
+}
+
+# Create AMCL node
+amcl_node = rospy.Publisher('/amcl', PoseWithCovarianceStamped, queue_size=10)
+
+# Callback function for laser scan data
+def laser_callback(scan_data):
+    # Process laser scan data and update AMCL
+
+    # Publish new pose estimate
+    amcl_node.publish(new_pose)
+
+# Subscribe to laser scan data
+rospy.Subscriber('/scan', LaserScan, laser_callback)
+
+# Callback function for odometry data
+def odom_callback(odom_data):
+    # Process odometry data and update AMCL
+
+    # Publish new pose estimate
+    amcl_node.publish(new_pose)
+
+# Subscribe to odometry data
+rospy.Subscriber('/odom', Odometry, odom_callback)
+
+# Main loop
+while not rospy.is_shutdown():
+    # Perform any other necessary tasks
+
+    # Sleep for a short duration
+    rospy.sleep(0.1)
