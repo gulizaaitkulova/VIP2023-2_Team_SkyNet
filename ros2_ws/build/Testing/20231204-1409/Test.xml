@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20231204-1409-Experimental"
+	Name="elee02-MacBookPro"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="elee02-MacBookPro"
+	OSRelease="6.2.0-37-generic"
+	OSVersion="#38~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov  2 18:01:13 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="70"
+	ProcessorCacheSize="6144"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="0"
+	TotalPhysicalMemory="15892"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2894.54"
+	>
+	<Testing>
+		<StartDateTime>Dec 04 23:34 KST</StartDateTime>
+		<StartTestTime>1701700440</StartTestTime>
+		<TestList/>
+		<EndDateTime>Dec 04 23:34 KST</EndDateTime>
+		<EndTestTime>1701700440</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

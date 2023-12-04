@@ -1,0 +1,33 @@
+[0.031s] Invoking command in '/home/elee02/ros2_ws/build/turtlebot3_gazebo': /usr/bin/cmake /home/elee02/ros2_ws/src/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/home/elee02/ros2_ws/install/turtlebot3_gazebo
+[0.083s] -- The C compiler identification is GNU 11.4.0
+[0.142s] -- The CXX compiler identification is GNU 11.4.0
+[0.150s] -- Detecting C compiler ABI info
+[0.219s] -- Detecting C compiler ABI info - done
+[0.227s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.228s] -- Detecting C compile features
+[0.228s] -- Detecting C compile features - done
+[0.231s] -- Detecting CXX compiler ABI info
+[0.312s] -- Detecting CXX compiler ABI info - done
+[0.321s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.322s] -- Detecting CXX compile features
+[0.322s] -- Detecting CXX compile features - done
+[0.335s] [31mCMake Error at CMakeLists.txt:22 (find_package):
+[0.335s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.335s]   has asked CMake to find a package configuration file provided by
+[0.335s]   "ament_cmake", but CMake did not find one.
+[0.335s] 
+[0.335s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.335s]   any of the following names:
+[0.336s] 
+[0.336s]     ament_cmakeConfig.cmake
+[0.336s]     ament_cmake-config.cmake
+[0.336s] 
+[0.336s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.336s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.336s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.336s]   has been installed.
+[0.336s] 
+[0.337s] [0m
+[0.337s] -- Configuring incomplete, errors occurred!
+[0.337s] See also "/home/elee02/ros2_ws/build/turtlebot3_gazebo/CMakeFiles/CMakeOutput.log".
+[0.340s] Invoked command in '/home/elee02/ros2_ws/build/turtlebot3_gazebo' returned '1': /usr/bin/cmake /home/elee02/ros2_ws/src/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/home/elee02/ros2_ws/install/turtlebot3_gazebo

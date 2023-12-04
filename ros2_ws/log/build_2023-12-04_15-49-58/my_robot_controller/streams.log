@@ -1,0 +1,48 @@
+[1.217s] Invoking command in '/home/elee02/ros2_ws/build/my_robot_controller': PYTHONPATH=/home/elee02/ros2_ws/build/my_robot_controller/prefix_override:/home/elee02/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/elee02/ros2_ws/build/my_robot_controller/build --no-deps install_data
+[1.625s] running develop
+[1.626s] /home/elee02/.local/lib/python3.10/site-packages/setuptools/command/develop.py:39: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[1.626s] !!
+[1.626s] 
+[1.626s]         ********************************************************************************
+[1.626s]         Please avoid running ``setup.py`` and ``easy_install``.
+[1.626s]         Instead, use pypa/build, pypa/installer or other
+[1.626s]         standards-based tools.
+[1.626s] 
+[1.626s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[1.626s]         ********************************************************************************
+[1.626s] 
+[1.626s] !!
+[1.626s]   easy_install.initialize_options(self)
+[1.667s] /home/elee02/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[1.667s] !!
+[1.667s] 
+[1.667s]         ********************************************************************************
+[1.667s]         Please avoid running ``setup.py`` directly.
+[1.668s]         Instead, use pypa/build, pypa/installer or other
+[1.668s]         standards-based tools.
+[1.668s] 
+[1.668s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[1.668s]         ********************************************************************************
+[1.668s] 
+[1.668s] !!
+[1.668s]   self.initialize_options()
+[1.924s] running egg_info
+[1.953s] writing my_robot_controller.egg-info/PKG-INFO
+[1.954s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[1.954s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[1.954s] writing requirements to my_robot_controller.egg-info/requires.txt
+[1.954s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[1.995s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[1.997s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.022s] running build_ext
+[2.022s] Creating /home/elee02/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[2.023s] Installing draw_circle script to /home/elee02/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.024s] Installing pose_subscriber script to /home/elee02/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.024s] Installing test_node script to /home/elee02/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.024s] Installing turtle_controller script to /home/elee02/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.024s] 
+[2.025s] Installed /home/elee02/ros2_ws/build/my_robot_controller
+[2.025s] running install_data
+[2.025s] copying resource/my_robot_controller -> /home/elee02/ros2_ws/install/my_robot_controller/share/ament_index/resource_index/packages
+[2.025s] copying package.xml -> /home/elee02/ros2_ws/install/my_robot_controller/share/my_robot_controller
+[2.062s] Invoked command in '/home/elee02/ros2_ws/build/my_robot_controller' returned '0': PYTHONPATH=/home/elee02/ros2_ws/build/my_robot_controller/prefix_override:/home/elee02/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/elee02/ros2_ws/build/my_robot_controller/build --no-deps install_data
