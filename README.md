@@ -1,4 +1,4 @@
-# Video Presentation
+# Video Presentation (Click on the image to watch the video)
 [![Default Thumbnail](http://img.youtube.com/vi/Ee-Qj5FtBRU/0.jpg)](http://www.youtube.com/watch?v=Ee-Qj5FtBRU)
 
 #### README - Webots - Obstacle avoiding robot simulation
